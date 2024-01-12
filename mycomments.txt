@@ -11,3 +11,14 @@ Basics
 8) in <app name>\urls.py we have to add redirects: "from django.urls import path, from . import views" urlpatterns = [ path()] etc
 9) settings.py add our appname under INSTALLED_APPS
 10) in the base url.py add , ""include" to imports, add the paths for the url
+
+
+Open Questions/not tried yet:
+- Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
+How to: 
+1) create .env file in the same folder as manage.py, *cut* content SECRET KEY = "<key" from settings.py
+2) create .gitignore, content ".env"
+3) in settings.py: from decouple import config SECRET_KEY = config("SECRET_KEY")
+4) install and add modules to requirements as such:
+pip install python-decouple
+pip freeze > requirements.txt
