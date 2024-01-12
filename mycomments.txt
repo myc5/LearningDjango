@@ -1,0 +1,13 @@
+How I created the app:
+
+Basics
+1) Create blank Django Project in VS
+2) Use Virtual Environment (Solutions Explorer -> Right Click on Pyth Env)
+3) Test if it works properly: in cmd do "python manage.py runserver (opt: port)"; in VS Ctrl+F5 works instead
+4) Create an app: in cmd do "python manage.py startapp <app name>"; in VS I had to use the Solution Explorer to add it
+5) This creates a folder with the app name. Note: manage.py, <app name> Folder and Django folder should be in the same directory
+6) in views.py added "from django.http import HttpResponse" to serve HTTP Requests on the functions defined
+7) Define Functions for each View
+8) in <app name>\urls.py we have to add redirects: "from django.urls import path, from . import views" urlpatterns = [ path()] etc
+9) settings.py add our appname under INSTALLED_APPS
+10) in the base url.py add , ""include" to imports, add the paths for the url
