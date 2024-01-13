@@ -10,10 +10,20 @@ Basics
 7) Define Functions for each View
 8) in <app name>\urls.py we have to add redirects: "from django.urls import path, from . import views" urlpatterns = [ path()] etc
 9) settings.py add our appname under INSTALLED_APPS
-10) in the base url.py add , ""include" to imports, add the paths for the url
+10) in the base url.py add ", include" to imports, add the paths for the url
+
+Migrating
+In the CMD line: "python manage.py makemigrations, then "python manage.py migrate"
+This does not work in Visual Studio (non-Code, that is), and needs to be done via right click on  -> Python -> Django
+
+DBs
+In models.py add the classes, can inherit from imported Django Models
+- After adding the models, remember to migrate the changes via "python manage.py makemigrations <app name>" & migrate command
 
 
-Open Questions/not tried yet:
+Data
+
+Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
 How to: 
 1) create .env file in the same folder as manage.py, *cut* content SECRET KEY = "<key" from settings.py
@@ -22,3 +32,4 @@ How to:
 4) install and add modules to requirements as such:
 pip install python-decouple
 pip freeze > requirements.txt
+VS can update requirements.txt via right click
