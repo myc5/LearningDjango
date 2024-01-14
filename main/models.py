@@ -16,3 +16,11 @@ class Item(models.Model):
     
     def __str__(self):
         return self.text
+    
+""" This works but is not necessary right now
+
+t = ToDoList(name="List 1")
+t.save()
+t.item_set.create(text="Do this thing 1", complete=False)
+t.item_set.create(text="Do this thing 2", complete=True)
+"""
