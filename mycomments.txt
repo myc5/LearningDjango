@@ -1,4 +1,4 @@
-How I created the app:
+My notes, written along while learning and experimenting for review
 
 Basics
 1) Create blank Django Project in VS
@@ -45,6 +45,10 @@ Path should be <app name>\Templates\<app name>\ (VS creates this by default it s
 - Templates can use {{variables}}, these need to be added to views.py in the {}^ as well, i.e. {"name": "Home Page"}
 - {% content block %} {% endblock %} works similarily and lets the html page that uses the extend fill in (so the base.html doesn't have a var it doesn't want to use)
 - blocks allow default values as well, i.e. {% title block %}Default Value{% endblock %} 
+
+Adding forms
+- create forms.py, import forms from django
+- create the class and import it in views.py
 
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 

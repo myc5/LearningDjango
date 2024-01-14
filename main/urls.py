@@ -9,5 +9,6 @@ urlpatterns = [
     path("help", views.help_, name="help"),
     path("page1", views.page1, name="Page 1"),
     #path("<int:id>", views.db, name="Database"),
-    path("<int:id>", views.todo, name="ToDo")
+    path("<int:id>", views.todo, name="ToDo"),
+    path("create", views.create, name="Create new forms")
     ]

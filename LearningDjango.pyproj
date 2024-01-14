@@ -33,6 +33,7 @@
   <ItemGroup>
     <Compile Include="main\admin.py" />
     <Compile Include="main\apps.py" />
+    <Compile Include="main\forms.py" />
     <Compile Include="main\migrations\__init__.py" />
     <Compile Include="main\models.py" />
     <Compile Include="main\tests.py" />
@@ -48,6 +49,7 @@
   <ItemGroup>
     <Content Include=".env" />
     <Content Include="main\templates\main\base.html" />
+    <Content Include="main\templates\main\create.html" />
     <Content Include="main\templates\main\help.html" />
     <Content Include="main\templates\main\home.html" />
     <Content Include="main\templates\main\index.html" />
