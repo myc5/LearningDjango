@@ -10,14 +10,25 @@
 
 <!-- Do not add curly braces to variables inside if blocks -->
 	{% if result == "It worked" %}
+	<form method="post" action="#">
+		{% csrf_token %}
 	<p> Name of List: {{item.name}} <br></br>
 		Tasks:
 		{% for tasks in item.item_set.all %}
-				<li>{{tasks.text}}</li>
-			{% endfor %}
+			{% if tasks.complete == True %}
+<!-- If the task is completed, they are pre-"checked", and all checkboxes are named after their IDs, i.e. c0 -->
+				<li><input type="checkbox", value="clicked", name="c{{tasks.id}}" checked>{{tasks.text}}</li>
+			{% else %}
+				<li><input type="checkbox", value="clicked", name="c{{tasks.id}}">{{tasks.text}}</li>
+			{% endif %}
+		{% endfor %}
 			<br></br>
 		Amount of ToDoLists: {{t_length}}
 	</p>
+	<button type="submit", name="save", value="save">Save</button>
+	<input type="text", name="new">
+	<button type="submit", name="newItem", value="newItem">Add Item</button>
+	</form>
 	{% endif %}
 
 {% endblock %}

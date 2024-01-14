@@ -1,14 +1,15 @@
 <!-- Using Django forms, see forms.py on which entries/buttons gets passed over
-	Only the "Create New" button is done manually in HTML
-	form.as_table is default, .as_p (vertically) .as_ul (list)
-	% csrf_token % required to be added before forms for security reasons (?)
+	- Only the "Create New" button is done manually in HTML
+	- form.as_table is default, .as_p (vertically) .as_ul (list)
+	- % csrf_token % required to be added before forms for security reasons (?)
+	- post method for security reasons instead of get
 -->
 {% extends "main/base.html" %}
 
 {% block title %} Create new list {% endblock %}
 
 {% block content %} Create Page <br></br>
-	<form method="post" action="/create/">
+	<form method="post" action="/create">
 	{% csrf_token %}
 	{{form.as_p}}
 	<button type="submit", name="save">Create New</button>

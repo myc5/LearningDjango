@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import ToDoList, Item
 from .forms import CreateForm
@@ -38,6 +38,7 @@ def todo(response, id):
 
 # New version with template and offloaded if/else checks   
 def todo(response, id):
+    
     t_length = len(ToDoList.objects.all())
     object_list = []
     for i in range(t_length):
@@ -46,8 +47,33 @@ def todo(response, id):
     if id not in object_list:
         return render(response, "main/todo.html", {"result": "Error", "id": id, "object_list": object_list})
     item = ToDoList.objects.get(id=id)
+    
+    if response.method == "POST": # Dict {"save": ["save"], "c1": ["clicked"]} - these are the values set in todo.html
+        print(response.POST)    
+        if response.POST.get("save"):
+            for tasks in item.item_set.all():
+                if response.POST.get("c" + str(tasks.id)) == "clicked":
+                    tasks.complete = True
+                else:
+                    tasks.complete = False
+                tasks.save() 
+        elif response.POST.get("newItem"):    
+            txt = response.POST.get("new")
+            if len(txt) >= 3:
+                item.item_set.create(text=txt, complete=False)    
+            else:
+                print("Input too short")    
+        
     return render(response, "main/todo.html", {"result": "It worked", "item": item, "t_length": t_length})
 
 def create(response):
-    form = CreateForm()    
+    if response.method == "POST": # check which request type we are using, the default is GET
+        form = CreateForm(response.POST)        
+        if form.is_valid(): # the .is_valid method checks if all required fields were filled in correctly
+            n = form.cleaned_data["name"] # extract the clear type name and save it in our ToDoList
+            t = ToDoList(name=n)
+            t.save()
+        return HttpResponseRedirect(f"/{t.id}") # Once saved, redirect to the new list immediately
+    else:
+        form = CreateForm()    
     return render(response, "main/create.html", {"form":form})

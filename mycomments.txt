@@ -31,7 +31,7 @@ We can now create objects, even in the shell like this:
 - t.item_set.create(text="Do this thing", complete=False), t.item_set.all() shows all entries
 - as above, t.item_set.get(id=1) etc will show the appropriate items
 - .filter(name__startswith="My") to search for objects starting with "My"
-- del_object = t.get(id=2) followed by del_object.delete() to delete
+- for example: del_object = t.get(id=2) followed by del_object.delete() to delete
 
 
 Admin Panel
@@ -49,6 +49,9 @@ Path should be <app name>\Templates\<app name>\ (VS creates this by default it s
 Adding forms
 - create forms.py, import forms from django
 - create the class and import it in views.py
+- when submitting forms there are two ways: post and get; use post for security, get to retrieve public information (like search in URLSs)
+- Redirect to newly created form possible
+- For custom forms look more into response.POST.get() dictionary in combination with the button values in the form, can print to console for the format etc
 
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
