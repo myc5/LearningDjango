@@ -11,6 +11,7 @@ Basics
 8) in <app name>\urls.py we have to add redirects: "from django.urls import path, from . import views" urlpatterns = [ path()] etc
 9) settings.py add our appname under INSTALLED_APPS
 10) in the base url.py add ", include" to imports, add the paths for the url
+11) urlpatterns accepts things like "<int:id>" or "<str:name>" as well
 
 Migrating
 In the CMD line: "python manage.py makemigrations, then "python manage.py migrate"
@@ -20,8 +21,22 @@ DBs
 In models.py add the classes, can inherit from imported Django Models
 - After adding the models, remember to migrate the changes via "python manage.py makemigrations <app name>" & migrate command
 
+We can now create objects, even in the shell like this:
+- "python manage.py shell" to start the shell
+- t = ToDoList(name="My List") (creating the object as usual but with assigned parameter)
+- t.save() to save it
+- now we can list all objects via belonging to the ToDoList class with ToDoList.objects.all() or specific ones via id (ToDoList.objects.get(id=1))
+- also search them via ToDoList.objects.get(name="My List")
+- t.item_set.all() will show an empty placeholder list at first because Items are the FKs for it
+- t.item_set.create(text="Do this thing", complete=False), t.item_set.all() shows all entries
+- as above, t.item_set.get(id=1) etc will show the appropriate items
+- .filter(name__startswith="My") to search for objects starting with "My"
+- del_object = t.get(id=2) followed by del_object.delete() to delete
 
-Data
+
+Admin Panel
+- python manage.py createsuperuser (again VS needs the right click stuff instead)
+- import the ToDoList in admin.py, then admin.site.register(ToDoList) so we can see it on the admin site
 
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
@@ -33,3 +48,6 @@ How to:
 pip install python-decouple
 pip freeze > requirements.txt
 VS can update requirements.txt via right click
+
+Other stuff:
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' to avoid the warnings; probably better to actually create Classes with proper Primary Keys instead on a real app
