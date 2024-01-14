@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import ToDoList, Item
 from .forms import CreateForm
+
+from django.contrib.auth.decorators import login_required
 # Funcs that are called for specific views
 
 """def home(response):
@@ -77,3 +79,14 @@ def create(response):
     else:
         form = CreateForm()    
     return render(response, "main/create.html", {"form":form})
+
+@login_required(login_url= "/admin")
+def debug(response):
+    todo_lists = ToDoList.objects.all()
+    t_length = len(ToDoList.objects.all())
+    object_dict = {}
+    for i in range(t_length):
+        obj = ToDoList.objects.all()[i].id
+        object_dict[f"id={obj}"] = ToDoList.objects.get(id=obj)
+    return render(response, "main/debug.html", {"todo_lists": todo_lists, "todo_length": t_length, "todo_dict": object_dict})
+

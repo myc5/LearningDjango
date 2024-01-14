@@ -23,6 +23,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("main.urls")), # include() points to our main (app) file, urls our defined funcs to be called
-    path("help/", include("main.urls")),
     
 ]

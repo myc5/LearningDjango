@@ -10,5 +10,6 @@ urlpatterns = [
     path("page1", views.page1, name="Page 1"),
     #path("<int:id>", views.db, name="Database"),
     path("<int:id>", views.todo, name="ToDo"),
-    path("create", views.create, name="Create new forms")
+    path("create", views.create, name="Create new forms"),
+    path("debug", views.debug, name="Debug")
     ]

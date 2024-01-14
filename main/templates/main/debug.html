@@ -1,0 +1,19 @@
+<!-- Uses: views.debug, main/base.html, requires login -->
+{% extends "main/base.html" %}
+
+{% block title %}Debug Page{% endblock%}
+
+{% block content %}
+	<h1>Names of every available of ToDoList</h1>
+	{% for lists in todo_lists%}
+	<li>{{lists.name}}</li>
+	{% endfor %}
+	<br></br>
+	Number of lists: {{todo_length}}
+	<br></br>
+	<h1>ID / List pairs</h1>
+	{% for keys, values in todo_dict.items %}
+	<li>{{keys}}: {{values}}</li>
+	{% endfor %}
+{% endblock%}
+

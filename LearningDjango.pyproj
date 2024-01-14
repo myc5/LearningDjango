@@ -50,6 +50,7 @@
     <Content Include=".env" />
     <Content Include="main\templates\main\base.html" />
     <Content Include="main\templates\main\create.html" />
+    <Content Include="main\templates\main\debug.html" />
     <Content Include="main\templates\main\help.html" />
     <Content Include="main\templates\main\home.html" />
     <Content Include="main\templates\main\index.html" />
