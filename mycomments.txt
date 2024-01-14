@@ -38,8 +38,17 @@ Admin Panel
 - python manage.py createsuperuser (again VS needs the right click stuff instead)
 - import the ToDoList in admin.py, then admin.site.register(ToDoList) so we can see it on the admin site
 
+Template Inheritance (HTML)
+Path should be <app name>\Templates\<app name>\ (VS creates this by default it seems)
+- Created the base.html, extended it to home.html
+- adjust the functions in views.py to return render(response, "path/to.html", {})
+- Templates can use {{variables}}, these need to be added to views.py in the {}^ as well, i.e. {"name": "Home Page"}
+- {% content block %} {% endblock %} works similarily and lets the html page that uses the extend fill in (so the base.html doesn't have a var it doesn't want to use)
+- blocks allow default values as well, i.e. {% title block %}Default Value{% endblock %} 
+
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
+Warning: if it already got shared once, consider it a) compromised and b) the gitignore doesn't seem to work if it already got pushed (?)
 How to: 
 1) create .env file in the same folder as manage.py, *cut* content SECRET KEY = "<key" from settings.py
 2) create .gitignore, content ".env"

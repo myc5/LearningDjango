@@ -1,0 +1,11 @@
+<!-- HTML file that inherits from base.html, syntax: % extends "path/to.html" % with curly braces (using the proper syntax here throws an error) -->
+
+{% extends "main/base.html" %}
+
+{% block title %}Home Page Title{% endblock %}
+
+{% block content %}
+<h1>Home Page</h1> 
+{% endblock %}
+
+<!-- This gets passed through to the block content place holder in base.html-->

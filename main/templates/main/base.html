@@ -1,0 +1,26 @@
+<!-- This is our base template that the other HTML files will inherit from. Good for permanently
+	available items like the top bar and such
+	Double curly bracers indicate variables, adjust the dict in views.py accordingly
+	instead of fixed variables, we can also use % block content %, % endblock %, for better extend control
+-->
+
+<html>
+
+<head>
+
+	<title>{% block title %}Learning Django{% endblock %}</title>
+
+</head>
+
+<body>
+
+	<div id ="content", name="content">
+
+	{% block content %} Default Value
+	{% endblock %}
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+
+{% block title %}To Do Lists{% endblock %}
+
+{% block content %}
+<h1>{{result}}</h1> 
+	{% if result == "Error" %}
+	<p>ID does not exist. Try one of {{object_list}} instead</p>
+	{% endif %}
+
+<!-- Do not add curly braces to variables inside if blocks -->
+	{% if result == "It worked" %}
+	<p> Name of List: {{item.name}} <br></br>
+		Tasks:
+		{% for tasks in item.item_set.all %}
+				<li>{{tasks.text}}</li>
+			{% endfor %}
+			<br></br>
+		Amount of ToDoLists: {{t_length}}
+	</p>
+	{% endif %}
+
+{% endblock %}
