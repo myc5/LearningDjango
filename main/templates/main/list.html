@@ -1,0 +1,11 @@
+<!-- Class Based View Test-->
+{% extends "main/base.html" %}
+
+{% block title %}Debug Page{% endblock%}
+
+{% block content %}
+	<h1>Names of every available of ToDoList</h1>
+	{% for lists in todo_lists%}
+	<li>{{lists.name}}</li>
+	{% endfor %}
+{% endblock%}

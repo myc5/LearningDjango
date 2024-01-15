@@ -65,6 +65,9 @@ Adding a user registration app
 - custom form uses django-crispy-forms, install via pip or right click (install bootstrap4 the same way); also add it to settings.py under apps and at the very end CRISPY_TEMPLATE_PACK="bootstrap4"
 - To be added: specific sites that only show for a specific user
 
+Class based views:
+- simpler syntax for what the definition based views could do, can take model, context_object_name, template_name to pass on like render()
+
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
 Warning: if it already got shared once, consider it a) compromised and b) the gitignore doesn't seem to work if it already got pushed (?)

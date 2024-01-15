@@ -8,7 +8,7 @@
 
 {% block title %} Create new list {% endblock %}
 
-{% block content %} Create Page <br></br>
+{% block content %} Create A New List <br></br>
 	<form method="post" action="/create">
 	{% csrf_token %}
 	{{form.as_p}}

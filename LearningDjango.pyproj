@@ -62,6 +62,7 @@
     <Content Include="main\templates\main\help.html" />
     <Content Include="main\templates\main\home.html" />
     <Content Include="main\templates\main\index.html" />
+    <Content Include="main\templates\main\list.html" />
     <Content Include="main\templates\main\todo.html" />
     <Content Include="mycomments.txt" />
     <Content Include="register\templates\register\register.html" />

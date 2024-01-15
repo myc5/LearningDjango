@@ -5,6 +5,8 @@ from .models import ToDoList, Item
 from .forms import CreateForm
 
 from django.contrib.auth.decorators import login_required
+
+from django.views.generic import ListView
 # Funcs that are called for specific views
 
 """def home(response):
@@ -90,3 +92,8 @@ def debug(response):
         object_dict[f"id={obj}"] = ToDoList.objects.get(id=obj)
     return render(response, "main/debug.html", {"todo_lists": todo_lists, "todo_length": t_length, "todo_dict": object_dict})
 
+# Trying out a classed-based view
+class ToDoListView(ListView):
+    model = ToDoList # Model name goes here
+    context_object_name = "todo_lists" # context names like in the return render go here
+    template_name = "main/list.html" # as above

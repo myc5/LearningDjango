@@ -1,7 +1,7 @@
 asgiref==3.7.2
-bootstrap4==0.1.0
 colorama==0.4.6
 crispy-bootstrap4==2023.1
+crispy-forms-bootstrap2==2022.1
 Django==4.2.9
 django-crispy-forms==2.1
 exceptiongroup==1.2.0

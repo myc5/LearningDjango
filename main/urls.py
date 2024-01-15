@@ -11,5 +11,6 @@ urlpatterns = [
     #path("<int:id>", views.db, name="Database"),
     path("<int:id>", views.todo, name="ToDo"),
     path("create", views.create, name="Create new forms"),
-    path("debug", views.debug, name="Debug")
+    path("debug", views.debug, name="Debug"),
+    path("list", views.ToDoListView.as_view(), name="Classed Based List Version")
     ]
