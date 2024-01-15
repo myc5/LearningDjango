@@ -19,9 +19,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from register import views as rv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("main.urls")), # include() points to our main (app) file, urls our defined funcs to be called
+    path("register/", rv.register, name="register"), # we are linking directly to the function here
+    path("register2/", rv.register_custom, name="custom register"),
     
 ]

@@ -1,0 +1,15 @@
+<!-- Using a simple, unmodified Django form. The page will not show up if a user is already logged in. -->
+{% extends "main/base.html" %}
+
+{% block title %} Create User {% endblock %}
+
+{% block content %} 
+
+	<form method="post" class="form-group">
+		{% csrf_token %}
+			{{form}}
+		<button type="submit" class="btn btn-success">Register</button>
+	</form>
+
+
+{% endblock %}

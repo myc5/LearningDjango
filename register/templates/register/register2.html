@@ -1,0 +1,19 @@
+<!-- Using modified Django form with E-Mail. The page will not show up if a user is already logged in.
+- added Crispy Forms (L8, L14), though it doesn't seem to be working right now
+-->
+{% extends "main/base.html" %}
+
+{% block title %} Create User {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+	<form method="post" class="form-group">
+		{% csrf_token %}
+			{% crispy form %}
+		<button type="submit" class="btn btn-success">Register</button>
+	</form>
+
+
+{% endblock %}

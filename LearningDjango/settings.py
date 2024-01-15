@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.mainConfig',
+    'register.apps.registerConfig',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 # Middleware framework
@@ -117,3 +120,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' #added this to remove the Warnings (for now)
+CRISPY_TEMPLATE_PACK="bootstrap4"

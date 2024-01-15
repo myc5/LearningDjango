@@ -45,6 +45,14 @@
     <Compile Include="LearningDjango\settings.py" />
     <Compile Include="LearningDjango\urls.py" />
     <Compile Include="LearningDjango\wsgi.py" />
+    <Compile Include="register\admin.py" />
+    <Compile Include="register\apps.py" />
+    <Compile Include="register\forms.py" />
+    <Compile Include="register\migrations\__init__.py" />
+    <Compile Include="register\models.py" />
+    <Compile Include="register\tests.py" />
+    <Compile Include="register\views.py" />
+    <Compile Include="register\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".env" />
@@ -56,6 +64,8 @@
     <Content Include="main\templates\main\index.html" />
     <Content Include="main\templates\main\todo.html" />
     <Content Include="mycomments.txt" />
+    <Content Include="register\templates\register\register.html" />
+    <Content Include="register\templates\register\register2.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +74,10 @@
     <Folder Include="main\migrations\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
+    <Folder Include="register\" />
+    <Folder Include="register\migrations\" />
+    <Folder Include="register\templates\" />
+    <Folder Include="register\templates\register\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
