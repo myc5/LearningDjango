@@ -5,6 +5,7 @@
     <RootNamespace>LearningDjango</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>Pytest</TestFramework>
+    <WebBrowserPort>8000</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -68,6 +69,8 @@
     <Content Include="register\templates\register\register.html" />
     <Content Include="register\templates\register\register2.html" />
     <Content Include="requirements.txt" />
+    <Content Include="static\css\style.css" />
+    <Content Include="static\images\cat.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LearningDjango\" />
@@ -75,10 +78,13 @@
     <Folder Include="main\migrations\" />
     <Folder Include="main\templates\" />
     <Folder Include="main\templates\main\" />
+    <Folder Include="static\" />
     <Folder Include="register\" />
     <Folder Include="register\migrations\" />
     <Folder Include="register\templates\" />
     <Folder Include="register\templates\register\" />
+    <Folder Include="static\css\" />
+    <Folder Include="static\images\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

@@ -68,6 +68,10 @@ Adding a user registration app
 Class based views:
 - simpler syntax for what the definition based views could do, can take model, context_object_name, template_name to pass on like render()
 
+Static files (to this earlier next time):
+- created Static folder that can be accessed by all apps instead of having them under one app's folder
+
+
 Hiding the SECRET_KEY on GitHub:
 - Not sharing the SECRET_KEY in settings.py is a given if uploading to GitHub *and* intending to run it pubicly. 
 Warning: if it already got shared once, consider it a) compromised and b) the gitignore doesn't seem to work if it already got pushed (?)

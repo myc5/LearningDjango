@@ -3,10 +3,12 @@
 	Double curly bracers indicate variables, adjust the dict in views.py accordingly
 	instead of fixed variables, we can also use % block content %, % endblock %, for better extend control
 -->
+{% load static %}
 
 <html>
 
 <head>
+	
 	<!-- navbar style is copied, but most settings are self-explanatory-->
 	<style type="text/css">
 		.sidenav {
@@ -40,9 +42,12 @@
 
 	<title>{% block title %}Learning Django{% endblock %}</title>
 
+	
+
 </head>
 
 <body>
+	
 	<div class="sidenav">
 		<a href="/">Home</a>
 		<a href="/create">Create</a>
